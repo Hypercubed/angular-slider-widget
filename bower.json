@@ -1,0 +1,31 @@
+{
+  "name": "angular-slider-widget",
+  "version": "0.0.0",
+  "authors": [
+    "J. Harshbarger"
+  ],
+  "description": "AngularJS slider widget.",
+  "main": ["angular-slider-widget.js","angular-slider-widget.css"],
+  "keywords": [
+    "angularjs",
+    "slider",
+    "range",
+    "directive",
+    "input"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">= 1.2.5",
+    "ng-debounce": "~0.1.1"
+  },
+  "devDependencies": {
+    "angular-mocks": ">= 1.2.5"
+  }
+}

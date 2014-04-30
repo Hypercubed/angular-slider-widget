@@ -1,0 +1,37 @@
+{
+  "name": "angular-slider-widget",
+  "version": "0.0.0",
+  "description": "AngularJS slider widget.",
+  "main": "angular-slider-widget.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "load-grunt-tasks": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt": "^0.4.4",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-bump": "0.0.13"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hypercubed/angular-slider-widget.git"
+  },
+  "keywords": [
+    "angularjs",
+    "slider",
+    "range",
+    "directive",
+    "input"
+  ],
+  "author": "J. Harshbarger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hypercubed/angular-slider-widget/issues"
+  },
+  "homepage": "https://github.com/Hypercubed/angular-slider-widget"
+}
