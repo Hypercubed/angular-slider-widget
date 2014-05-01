@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="example-app">
+  <head>
+    <meta charset="utf-8" />
+    <title>angular-slider-widget example</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    </style>
+
+    <link rel="stylesheet" href="../angular-slider-widget.css" />
+
+
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/ng-debounce/angular-debounce.js"></script>
+    <script src="../angular-slider-widget.js"></script>
+  </head>
+  <body>
+
+    <h1>angular-slider-widget</h1>
+
+    <div ng-controller="MainController">
+
+    <h3>What?</h3>
+    Create a slider widget.
+
+    For example, this:
+    <p><code>
+      &lt;div slider ng-model="value" max="100" min="0" step="1" style="width: 400px" /&gt;
+    </code></p>
+
+    Becomes this:
+    <div slider ng-model="value" max="100" min="0" step="1" style="width: 400px"></div>
+    Value: {{value}}
+
+    <h3>Why?</h3>
+    Sometimes a range input is not enough.
+
+    <h3>Features</h3>
+    Both the range and spinner inputs are debounced.
+
+  </body>
+
+  <script>
+
+    angular.module('example-app', ['hc.slider']);
+
+    var MainController = function($scope) {
+      $scope.value = 10;
+    };
+  </script>
+</html>
