@@ -1,6 +1,6 @@
 {
   "name": "angular-slider-widget",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "AngularJS slider widget.",
   "main": "angular-slider-widget.js",
   "directories": {
