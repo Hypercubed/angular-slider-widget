@@ -3,10 +3,12 @@ module.exports = function(grunt){
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('bower.json'),
+
     jshint: {
       options: { jshintrc: true },
       all: ['gruntfile.js', '<%= pkg.name %>.js']
     },
+
     bump: {
       options: {
         files: ['bower.json','package.json'],
@@ -16,6 +18,7 @@ module.exports = function(grunt){
         pushTo: 'origin',
       }
     },
+
     uglify: {
       options: {
         banner: '/*\n * <%= pkg.title || pkg.name %> <%= pkg.version %>\n' +
@@ -27,6 +30,10 @@ module.exports = function(grunt){
           '<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
         }
       }
+    },
+
+    'gh-pages': {
+      src: ['<%= pkg.name %>.js','<%= pkg.name %>.min.js','*.css','bower_components/**/*','example/*']
     }
   });
 

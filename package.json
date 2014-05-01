@@ -9,7 +9,8 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt": "^0.4.4",
     "grunt-contrib-uglify": "^0.4.0",
-    "grunt-bump": "0.0.13"
+    "grunt-bump": "0.0.13",
+    "grunt-gh-pages": "^0.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
