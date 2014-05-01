@@ -32,8 +32,8 @@ module.exports = function(grunt){
 
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('default', ['build','test']);
+  grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['jshint', 'uglify']);
-  grunt.registerTask('publish', ['test','bump-only','uglify','bump-commit']);
+  grunt.registerTask('publish', ['bump-only','uglify','bump-commit']);
 
 };

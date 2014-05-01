@@ -1,11 +1,8 @@
 {
   "name": "angular-slider-widget",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "AngularJS slider widget.",
   "main": "angular-slider-widget.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {},
   "devDependencies": {
     "load-grunt-tasks": "^0.4.0",
@@ -15,7 +12,7 @@
     "grunt-bump": "0.0.13"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
