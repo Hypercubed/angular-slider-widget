@@ -12,7 +12,16 @@
 
   // Todo: customize labels, scale function
 
-  var template = '<div class="hc-slider"><div class="hc-number"><input type="number" min="{{min}}" max="{{max}}" ng-model="numberValue" step="{{step}}"></div><div class="hc-range"><input type="range" class="" ng-model="rangeValue"><span class="bubble limit floor" ng-show="left" >{{min | number:fractionSize}}</span><span class="bubble limit ceiling" ng-show="right">{{max | number:fractionSize}}</span></div></div>';
+  var template = ['<div class="hc-slider">',
+                    '<div class="hc-number">',
+                      '<input type="number" min="{{min}}" max="{{max}}" ng-model="numberValue" step="{{step}}">',
+                    '</div>',
+                    '<div class="hc-range">',
+                    '<input type="range" class="" ng-model="rangeValue">',
+                      '<span class="bubble limit floor" ng-show="left" >{{min | number:fractionSize}}</span>',
+                      '<span class="bubble limit ceiling" ng-show="right">{{max | number:fractionSize}}</span>',
+                    '</div>',
+                  '</div>'].join('');
 
   var app = angular.module('hc.slider',['debounce']);
 
