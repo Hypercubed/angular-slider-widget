@@ -30,20 +30,19 @@
       return {
         scope: {
           value: '=ngModel',
-          max: '=',
-          min: '=',
-          step: '=?',
-          fractionSize: '=?'
+          _max: '&?max',
+          _min: '&?min',
+          _step: '&?step',
+          _fractionSize: '&?'
         },
         template: template,
-        link: function(scope, element) {
+        link: function(scope, element, attr) {
+
           element.addClass('slider');
           var $range = element.find('input[type=range]');
 
-          scope.max = +scope.max || 1;
-          scope.min = +scope.min || 0;
-          scope.step = +scope.step || 0.01;
-          scope.fractionSize = scope.fractionSize || parseInt(Math.log(scope.step)/Math.log(0.1));
+          getReadonlyValues();
+
           scope.value = +scope.value || 0;
           scope.rangeValue = +scope.value || 0;
           scope.numberValue = +scope.value || 0;
@@ -51,6 +50,13 @@
           var applyValue = debounce(function(value) {
             scope.value = +value;
           }, 100);
+
+          function getReadonlyValues() {
+            scope.max = scope._max() || 1;
+            scope.min = scope._min() || 0;
+            scope.step = scope._step() || 0;
+            scope.fractionSize = scope._fractionSize() || parseInt(Math.log(scope.step)/Math.log(0.1));
+          }
 
           function changeRangeValue(newVal) {
 
@@ -69,13 +75,14 @@
           }
 
           function updateRange() {
+            getReadonlyValues()
 
             $range.attr('max', scope.max);  // Need to update range before value.
             $range.attr('min', scope.min);
             $range.attr('step', scope.step);
 
-            scope.rangeValue = +scope.value;
-            scope.numberValue = +scope.value;
+            scope.rangeValue = +scope.value || 0;
+            scope.numberValue = +scope.value || 0;
             updateDom();
           }
 
@@ -89,7 +96,7 @@
           
           scope.$watch('rangeValue', changeRangeValue);
           scope.$watch('numberValue', changeNumberValue);
-          scope.$watchCollection('[value,max,min,step]', updateRange);
+          scope.$watchCollection('[value,_max(),_min(),_step()]', updateRange);
 
         }
       };
